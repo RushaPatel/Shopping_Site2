@@ -1,5 +1,5 @@
 const input=document.getElementById("input");
-const tasks=document.getElementById("tasks");
+const list=document.getElementById("tasks");
 const add=document.getElementById("add");
 const up=document.getElementsByClassName("up");
 const close=document.getElementsByClassName("close");
@@ -13,24 +13,19 @@ for(a=0;a<close.length;a++){
 
 
 
-add.onclcik=
-    function add() {
-  var li = document.createElement("li");
- 
-  var t = document.createTextNode(inputValue);
-  li.appendChild(t);
- 
-    document.getElementById("tasks").appendChild(li);
-    console.log(input.value);
-  
-  document.getElementById("input").value = "";
+const todo=[];
+todo.push("1}");
+todo.push("2}");
 
-    }
-var ul=tasks.innerHTML;
-up.onclick=
-function up(){
-  var li=this.parentElement;
-  if((this).parent.is(':first-child')){
-
+function show(){
+  for(let i=0;i=todo.length;i++){
+    addtask(todo[i]);
   }
 }
+
+function addtask(tasks){
+  const li=document.createElement("li");
+  li.innerText=tasks;
+  list.appendChild(li);
+}
+show();
