@@ -1,12 +1,27 @@
 <!DOCTYPE html>
-<head></head>
+<head><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<style>
+  #delete{
+  position: absolute;
+  right:0px;
+  }
+  .list-group-item{
+    font-size:25px;
+  }
+  input.check{
+    width:20px;
+    height:20px;
+  }
+</style>
+</head>
 <body>
   <h3>Tasks To Complete</h3>
   <input id=input>
-  <button id=btnnew>Add</button>  
-  <ul id=tasks>
-    
+  <button id=btnnew class="btn btn-outline-primary">Add</button>  
+  <ul id=tasks class="list-group">
+    <li class="list-group-item"></li></li>
   </ul>  
+ 
   <script src="index.js"></script>
 </body>
 </html>
