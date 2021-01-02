@@ -5,6 +5,21 @@
   position: absolute;
   right:0px;
   }
+
+  #upbtn{
+    position:absolute;
+    right:40px;
+  }
+
+  #downbtn{
+    position:absolute;
+    right:80px;
+  }
+
+  .text{
+    position: absolute;
+    left:50px;
+    }
   .list-group-item{
     font-size:25px;
   }
@@ -12,10 +27,23 @@
     width:20px;
     height:20px;
   }
+
+  h2{
+    text-align:center;
+    padding-bottom: 10px;
+  }
+  body{
+    background-color: rgb(247, 247, 215);
+  }
+
+  .list-group-item{
+    background-color: transparent;
+  }
 </style>
 </head>
 <body>
-  <h3>Tasks To Complete</h3>
+  <h2>TO-DO LIST</h2>
+  <h4>Add a Task</h4>
   <input id=input>
   <button id=btnnew class="btn btn-outline-primary">Add</button>  
   <ul id=tasks class="list-group">

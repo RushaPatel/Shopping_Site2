@@ -1,4 +1,4 @@
-console.log("bkudrku");
+console.log("xxx");
 const tasks=document.getElementById("tasks");
 const input=document.getElementById("input");
 const btnnew=document.getElementById("btnnew");
@@ -38,11 +38,12 @@ function addToDo(newTask,i){
     const li=document.createElement("li");
     li.setAttribute("class","list-group-item")
    
-    const span=document.createElement("span")
+    const span=document.createElement("span");
+span.setAttribute("class","text");
     span.style.color='red';
     
   li.setAttribute('todo',i);
-    
+   
     span.innerText=newTask.task;
 
 const dlt=document.createElement('button');
@@ -57,11 +58,13 @@ const up=document.createElement('button');
 up.innerText='^';
 up.onclick= above;
 up.setAttribute("class","btn btn-outline-secondary");
+up.setAttribute("id","upbtn");
 
 const down=document.createElement('button');
 down.innerText='v';
 down.onclick= below;
-down.setAttribute("class","btn btn-outline-secondary")
+down.setAttribute("class","btn btn-outline-secondary");
+down.setAttribute("id","downbtn");
 
     const checkbox=document.createElement("input");
     checkbox.onclick=checkboxes ;
