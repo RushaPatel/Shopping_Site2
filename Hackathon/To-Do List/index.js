@@ -36,47 +36,55 @@ function showTodos(){
 }
 function addToDo(newTask,i){
     const li=document.createElement("li");
-    li.setAttribute("class","list-group-item")
-   
+    li.className="list-group-item ";
+
     const span=document.createElement("span");
-span.setAttribute("class","text");
+    span.className="col-auto padding";
     span.style.color='red';
     
   li.setAttribute('todo',i);
    
     span.innerText=newTask.task;
 
-const dlt=document.createElement('button');
-dlt.innerText='X';
-dlt.onclick=DeleteTodo;
-dlt.setAttribute("id","delete");
-dlt.setAttribute("class","btn btn-outline-danger");
+
+    const dlticon=document.createElement("i");
+    dlticon.className="fas fa-trash";
+    const dlt=document.createElement('button');
+    dlt.setAttribute("id","delete");
+    dlt.className="btn btn-outline-link col-1  red";
+    dlt.appendChild(dlticon);
+    dlt.onclick=DeleteTodo;
 
 
 
-const up=document.createElement('button');
-up.innerText='^';
-up.onclick= above;
-up.setAttribute("class","btn btn-outline-secondary");
-up.setAttribute("id","upbtn");
 
-const down=document.createElement('button');
-down.innerText='v';
-down.onclick= below;
-down.setAttribute("class","btn btn-outline-secondary");
-down.setAttribute("id","downbtn");
+    const up=document.createElement('button');
+    const upicon=document.createElement("i");
+    upicon.className="fas fa-chevron-up";
+    up.appendChild(upicon)
+    up.onclick= above;
+    up.className="btn btn-outline-link col-1  udbtn"
+    up.setAttribute("id","upbtn");
+
+    const down=document.createElement('button');
+    const downicon=document.createElement("i");
+    downicon.className="fas fa-chevron-down";
+    down.appendChild(downicon);
+    down.onclick= below;
+    down.className="btn btn-outline-link col-1  udbtn";
+    down.setAttribute("id","downbtn");
 
     const checkbox=document.createElement("input");
     checkbox.onclick=checkboxes ;
     checkbox.setAttribute('type','checkbox');
-    checkbox.setAttribute("class","check")
+    checkbox.className="check col-1";
     if(newTask.done){
         checkbox.setAttribute('checked',true);
         span.style.textDecoration='line-through';
         span.style.color='green';
     }
 
-
+    tasks.appendChild(li);
     li.appendChild(checkbox);
     li.appendChild(span);
     li.appendChild(dlt);
@@ -84,7 +92,7 @@ down.setAttribute("id","downbtn");
     li.appendChild(up);}
     if(i!==todos.length-1){
     li.appendChild(down);}
-    tasks.appendChild(li);
+ 
 }
 
 function checkboxes(event){
@@ -96,8 +104,14 @@ function checkboxes(event){
 }
 
 function DeleteTodo(event){
-   
+  
     let dindex= parseInt(event.target.parentElement.getAttribute('todo'));
+    
+    if(Number.isNaN(dindex)){
+        
+       dindex= parseInt(event.target.parentElement.parentElement.getAttribute('todo'));
+       
+    }
      const TempTodos=[];
      for(let i =0;i<todos.length;i++){
          if(i!==dindex){
@@ -110,6 +124,12 @@ function DeleteTodo(event){
 
      function above(event){
         let aindex= parseInt(event.target.parentElement.getAttribute('todo'));    
+
+        if(Number.isNaN(aindex)){
+        
+            aindex= parseInt(event.target.parentElement.parentElement.getAttribute('todo'));
+            
+         }
         if (aindex===0){
             return;
         }
@@ -124,7 +144,13 @@ function DeleteTodo(event){
      }
 
      function below(event){
-        let bindex= parseInt(event.target.parentElement.getAttribute('todo'));    
+        let bindex= parseInt(event.target.parentElement.getAttribute('todo'));   
+        
+        if(Number.isNaN(bindex)){
+        
+            bindex= parseInt(event.target.parentElement.parentElement.getAttribute('todo'));
+            
+         }
         if (bindex===todos.length-1){
             return;
         }
