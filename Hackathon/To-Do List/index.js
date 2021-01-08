@@ -87,11 +87,12 @@ function addToDo(newTask,i){
     tasks.appendChild(li);
     li.appendChild(checkbox);
     li.appendChild(span);
-    li.appendChild(dlt);
+    
     if(i!==0){
     li.appendChild(up);}
     if(i!==todos.length-1){
     li.appendChild(down);}
+    li.appendChild(dlt);
  
 }
 
