@@ -19,14 +19,14 @@ const productsarray=[
         price:"Rs.800",
         id:"3",
         image:"cloth4.jfif",
-        detail:"Baggy Denim color jeans"
+        detail:"Light Wash Denims"
         },
         {
         name:"Flannel Shirt",
         price:"Rs.500",
         id:"4",
         image:"cloth.jfif",
-        detail:"Pastel colored Flannel"
+        detail:"Pastel Colored Flannel"
         },
         {
         name:"Skater Pants",
