@@ -6,29 +6,34 @@ const productsarray=[
         name:"Sweatshirt",
         price:"Rs.600",
         id:"1",
-        image:"download.jpg"
+        image:"download.jpg",
+        detail:"White Oversized Sweatshirt"
     },{
         name:"Scrunchies",
         price:"Rs.200",
         id:"2",
-        image:"scrunchies.jpg"
+        image:"scrunchies.jpg",
+        detail:"Pack of 4- Nude Shades"
     },{
-    name:"Baggy Jeans",
+        name:"Baggy Jeans",
         price:"Rs.800",
         id:"3",
-        image:"cloth4.jfif"
+        image:"cloth4.jfif",
+        detail:"Baggy Denim color jeans"
         },
         {
         name:"Flannel Shirt",
         price:"Rs.500",
         id:"4",
-        image:"cloth.jfif"
+        image:"cloth.jfif",
+        detail:"Pastel colored Flannel"
         },
         {
         name:"Skater Pants",
         price:"Rs.850",
         id:"5",
-        image:"cloth5.jfif"
+        image:"cloth5.jfif",
+        detail:"Khaki color pants"
         }
 ];
 
@@ -49,7 +54,7 @@ function showProducts(index){
     title.className="card-title";
 
     const details=document.createElement('div');
-    details.innerText="Oversized Sweatshirt";
+    details.innerText=productsarray[index].detail;
     details.className="card-text"
         
     const price=document.createElement('h6');
