@@ -1,4 +1,4 @@
-const products=document.getElementById("products");
+const mainproducts=document.getElementById("products");
 console.log("bsd");
 
 const productsarray=[
@@ -37,6 +37,8 @@ const productsarray=[
         }
 ];
 
+let cart={};
+
 function showProducts(index){
     const carddiv=document.createElement('div');
     carddiv.className="card col-4";
@@ -64,21 +66,37 @@ function showProducts(index){
     const cartbtn=document.createElement('button');
     cartbtn.innerText="Add to Cart";
     cartbtn.className="btn btn-primary";
+    cartbtn.addEventListener("click",function(){
+        const productId=productsarray[index].id;
+        if(cart.hasOwnProperty(productId)){
+
+        cart[productId]+=1;}
+        else{
+            cart[productId]=1 
+        }
+        console.log(cart);
+    })
 
     const openbtn=document.createElement('button');
     openbtn.innerText="Open>";
     openbtn.className="btn btn-primary";
+
+    const cartdetails=document.createElement("span");
+    if(cart.hasOwnProperty(productsarray[index].id)){
+    cartdetails.innerText=productsarray[index].id;
+    }
 
     cardbodydiv.appendChild(title);
     cardbodydiv.appendChild(details);
     cardbodydiv.appendChild(price);
     cardbodydiv.appendChild(openbtn);
     cardbodydiv.appendChild(cartbtn);
+   cardbodydiv.appendChild(cartdetails);
    
 
     carddiv.append(image);
     carddiv.append(cardbodydiv);
-    products.append(carddiv)
+    mainproducts.append(carddiv);
     
 }
 
