@@ -75,6 +75,7 @@ function showProducts(index){
             cart[productId]=1 
         }
         console.log(cart);
+        refreshallproducts();
     })
 
     const openbtn=document.createElement('button');
@@ -83,7 +84,7 @@ function showProducts(index){
 
     const cartdetails=document.createElement("span");
     if(cart.hasOwnProperty(productsarray[index].id)){
-    cartdetails.innerText=productsarray[index].id;
+    cartdetails.innerText=" "+cart[productsarray[index].id]+" in Cart";
     }
 
     cardbodydiv.appendChild(title);
@@ -100,8 +101,14 @@ function showProducts(index){
     
 }
 
-for(let i=0;i<productsarray.length;i++){
+
+
+
+function refreshallproducts(){
+    mainproducts.innerHTML="";
+    for(let i=0;i<productsarray.length;i++){
     showProducts(i);
 }
+};
 
-
+refreshallproducts();
