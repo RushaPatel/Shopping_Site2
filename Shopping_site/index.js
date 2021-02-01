@@ -1,43 +1,13 @@
 const mainproducts=document.getElementById("products");
 console.log("bsd");
 
-const productsarray=[
-    {
-        name:"Sweatshirt",
-        price:"Rs.600",
-        id:"1",
-        image:"download.jpg",
-        detail:"White Oversized Sweatshirt"
-    },{
-        name:"Scrunchies",
-        price:"Rs.200",
-        id:"2",
-        image:"scrunchies.jpg",
-        detail:"Pack of 4- Nude Shades"
-    },{
-        name:"Baggy Jeans",
-        price:"Rs.800",
-        id:"3",
-        image:"cloth4.jfif",
-        detail:"Light Wash Denims"
-        },
-        {
-        name:"Flannel Shirt",
-        price:"Rs.500",
-        id:"4",
-        image:"cloth.jfif",
-        detail:"Pastel Colored Flannel"
-        },
-        {
-        name:"Skater Pants",
-        price:"Rs.850",
-        id:"5",
-        image:"cloth5.jfif",
-        detail:"Khaki color pants"
-        }
-];
+
 
 let cart={};
+
+if(localStorage.getItem("cart") != null) {
+  cart = JSON.parse(localStorage.getItem("cart"));
+}
 
 function showProducts(index){
     const carddiv=document.createElement('div');
@@ -75,6 +45,7 @@ function showProducts(index){
             cart[productId]=1 
         }
         console.log(cart);
+        saveCart();
         refreshallproducts();
     })
 
@@ -102,7 +73,9 @@ function showProducts(index){
 }
 
 
-
+function saveCart() {
+    localStorage.setItem("cart", JSON.stringify(cart));
+}
 
 function refreshallproducts(){
     mainproducts.innerHTML="";
@@ -112,3 +85,4 @@ function refreshallproducts(){
 };
 
 refreshallproducts();
+console.log(localStorage.getItem("cart") );
