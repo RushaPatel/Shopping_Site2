@@ -1,0 +1,48 @@
+#head{
+    margin:8px;
+    height:150px;
+    border:2px solid black;
+    font-size:80px;
+    text-align: center;
+    background-color: rgb(136, 220, 248);
+}
+
+.a{
+    border:1px solid black;
+    margin:8px;
+
+}
+
+.nav-item{
+    font-size:20px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#image1{
+    margin:8px;
+    height:4s00px;
+}
+
+#starting-text{
+    font-size:35px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:rgb(0, 0, 136);
+}
+
+#chatbot{
+    margin:8px;
+    margin-top:15px;
+}
+
+#submit{
+    border:1px solid black;
+    margin-left:8px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#note{
+    font-size:20px;
+    margin:8px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
