@@ -46,3 +46,47 @@
     margin:8px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+.a{
+    list-style-type:none;
+    border:1px solid black;
+    margin:5px;
+    
+}
+
+.question{
+    background-color:rgb(163, 149, 243);
+    font-size:25px;
+}
+
+.reply{
+    background-color: rgb(118, 97, 238);
+    font-size:25px;
+}
+
+.option{
+    margin:5px;
+    margin-left:5px;
+}
+
+#positivepic{
+    height:400px;
+    width:500px;
+    margin:20px;
+    border:1px solid black;
+    padding: 0px;
+}
+
+#positivetext{
+    margin:5px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:30px;
+}
+h3{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#options{
+    font-size:20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
