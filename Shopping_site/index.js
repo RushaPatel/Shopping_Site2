@@ -42,7 +42,7 @@ function showProducts(index){
 
         cart[productId]+=1;}
         else{
-            cart[productId]=1 
+            cart[productId]=1;
         }
         console.log(cart);
         saveCart();
@@ -74,7 +74,7 @@ function showProducts(index){
 
 
 function saveCart() {
-    localStorage.setItem("cart", JSON.stringify(cart));
+    localStorage.setItem("cart",JSON.stringify(cart))
 }
 
 function refreshallproducts(){
